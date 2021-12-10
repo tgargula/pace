@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "pace": "apps/pace",
+    "pace-e2e": "apps/pace-e2e"
+  }
+}

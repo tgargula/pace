@@ -1,0 +1,28 @@
+{
+  "root": "apps/pace-e2e",
+  "sourceRoot": "apps/pace-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/pace-e2e/cypress.json",
+        "devServerTarget": "pace:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "pace:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pace-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["pace"]
+}
