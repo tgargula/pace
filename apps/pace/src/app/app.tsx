@@ -1,27 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@hackyeah/api-interfaces';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthProvider';
+import { Sign } from './pages/Sign';
 
-export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
+const Router = () => {
+  const { user } = useAuth();
 
   return (
-    <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to pace!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Extensible Build Framework"
-        />
-      </div>
-      <div>{m.message}</div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <>
+          <Route path="/" element={<div>Home page</div>} />
+          <Route path="/sign" element={<Sign />} />
+        </>
+        {user && (
+          <>
+            <Route path="/private" element={<p>dupa</p>} />
+          </>
+        )}
+        <Route path="*" element={<p>404</p>} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export const App = () => {
+  return (
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
   );
 };
 
