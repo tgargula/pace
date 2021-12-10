@@ -4,6 +4,7 @@
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
     "pace": "apps/pace",
-    "pace-e2e": "apps/pace-e2e"
+    "pace-e2e": "apps/pace-e2e",
+    "types": "libs/types"
   }
 }

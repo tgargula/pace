@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Message } from '@hackyeah/api-interfaces';
+import AddButton from './components/addButton';
+import TaskList from './components/buttons/taskList';
 
 export const App = () => {
-  const [m, setMessage] = useState<Message>({ message: '' });
-
-  useEffect(() => {
-    fetch('/api')
-      .then((r) => r.json())
-      .then(setMessage);
-  }, []);
-
   return (
     <>
-      <div style={{ textAlign: 'center' }}>
-        <h1>Welcome to pace!</h1>
-        <img
-          width="450"
-          src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-          alt="Nx - Smart, Extensible Build Framework"
-        />
-      </div>
-      <div>{m.message}</div>
+      <TaskList
+        tasks={[
+          {
+            name: 'Hello',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
+        ]}
+      />
+      <AddButton />
     </>
   );
 };
