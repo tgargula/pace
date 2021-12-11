@@ -1,5 +1,5 @@
 import * as express from 'express';
-// import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import * as cors from 'cors';
 import {
   userRouter,
@@ -9,7 +9,7 @@ import {
   authRouter,
 } from './app/controllers';
 
-// const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 const prefix = '/api';
 
 const app = express();
@@ -17,10 +17,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 
-// app.use(`${prefix}/user`, userRouter(prisma));
-// app.use(`${prefix}/calendar`, calendarRouter(prisma));
-// app.use(`${prefix}/habit`, habitRouter(prisma));
-// app.use(`${prefix}/task`, taskRouter(prisma));
+app.use(`${prefix}/user`, userRouter(prisma));
+app.use(`${prefix}/calendar`, calendarRouter(prisma));
+app.use(`${prefix}/habit`, habitRouter(prisma));
+app.use(`${prefix}/task`, taskRouter(prisma));
 app.use(`${prefix}/auth`, authRouter);
 
 const port = process.env.port || 3333;
