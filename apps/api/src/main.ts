@@ -5,6 +5,7 @@ import {
   calendarRouter,
   habitRouter,
   taskRouter,
+  authRouter,
 } from './app/controllers';
 
 const prisma = new PrismaClient();
@@ -16,6 +17,7 @@ app.use(`${prefix}/user`, userRouter(prisma));
 app.use(`${prefix}/calendar`, calendarRouter(prisma));
 app.use(`${prefix}/habit`, habitRouter(prisma));
 app.use(`${prefix}/task`, taskRouter(prisma));
+app.use(`${prefix}/auth`, authRouter);
 
 const port = process.env.port || 3333;
 
