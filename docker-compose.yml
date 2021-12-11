@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+    postgres:
+        image: postgres:10.5
+        container_name: pace
+        restart: always
+        environment:
+          - POSTGRES_USER=hackyeah
+          - POSTGRES_PASSWORD=hackyeah
+        logging:
+          options:
+            max-size: 10m
+            max-file: "3"
+        ports:
+          - '5438:5432'
