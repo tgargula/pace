@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id   String @id @default(uuid())
+  name String
+
+  Task     Task[]
+  Calendar Calendar[]
+}
+
+model Task {
+  id         String    @id @default(uuid())
+  userId     String
+  name       String
+  deadline   DateTime?
+  priority   Priority?
+  estimation Int?
+  progress   Int?
+  notes      String?
+
+  User User @relation(fields: [userId], references: [id])
+}
+
+model Calendar {
+  id               String  @id @default(uuid())
+  userId           String
+  googleCalendarId String  @map("google_calendar_id")
+  name             String
+  selected         Boolean
+
+  User User @relation(fields: [userId], references: [id])
+}
+
+model Habit {
+  id    String @id @default(uuid())
+  name  String
+  start String
+  end   String
+  days  Day[]
+}
+
+enum Priority {
+    LOW
+    MEDIUM
+    HIGH
+    URGENT
+}
+
+enum Day {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
