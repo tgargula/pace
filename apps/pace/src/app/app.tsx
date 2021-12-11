@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthProvider';
 import { Sign } from './pages/Sign';
+import Tasks from './pages/Tasks';
 
 const Router = () => {
   const { user } = useAuth();
@@ -15,6 +16,7 @@ const Router = () => {
         {user && (
           <>
             <Route path="/private" element={<p>dupa</p>} />
+            <Route path="/tasks" element={<Tasks />} />
           </>
         )}
         <Route path="*" element={<p>404</p>} />

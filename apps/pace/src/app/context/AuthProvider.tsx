@@ -3,7 +3,8 @@ import { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
-type User = null | {};
+type User = null | Record<string, unknown>;
+
 interface AuthContextValue {
   user: User;
   login: () => void;
@@ -20,7 +21,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User>(null);
 
   const login = () => {
     setUser({});

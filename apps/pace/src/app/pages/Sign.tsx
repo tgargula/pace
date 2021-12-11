@@ -22,6 +22,7 @@ export const Sign = () => {
         <GoogleButton onClick={handleLogin}>Sign in with Google</GoogleButton>
       )}
       <Link to="/private">/private</Link>
+      <Link to="/tasks">/tasks</Link>
     </Container>
   );
 };

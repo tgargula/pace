@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@hackyeah/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@hackyeah/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@hackyeah/types": ["libs/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
