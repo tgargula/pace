@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { AuthProvider, useAuth } from './context/AuthProvider';
 import { HomePage } from './pages/HomePage';
 import { Preferences } from './pages/Preferences';
@@ -14,7 +15,7 @@ const Router = () => {
       <Routes>
         <>
           <Route path="/" element={<HomePage />} />
-          {/* <Route path="/sign" element={<Sign />} /> */}
+          <Route path="/sign" element={<Sign />} />
         </>
         {user && (
           <>
@@ -29,11 +30,15 @@ const Router = () => {
   );
 };
 
+const queryClient = new QueryClient();
+
 export const App = () => {
   return (
-    <AuthProvider>
-      <Router />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
+    </QueryClientProvider>
   );
 };
 

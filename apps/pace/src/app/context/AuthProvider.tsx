@@ -7,6 +7,7 @@ type User = null | Record<string, unknown>;
 
 interface AuthContextValue {
   user: User;
+  setUser: (user: User) => void;
   login: () => void;
   logout: () => void;
 }
@@ -32,6 +33,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const value = {
     user,
+    setUser,
     login,
     logout,
   };

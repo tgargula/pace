@@ -2238,6 +2238,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/cors@^2.8.12":
+  version "2.8.12"
+  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
+  integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
+
 "@types/cssnano@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/cssnano/-/cssnano-4.0.1.tgz#67fa912753d80973a016e7684a47fedf338aacff"
@@ -3890,6 +3895,14 @@ core-util-is@~1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
+
+cors@^2.8.5:
+  version "2.8.5"
+  resolved "https://registry.yarnpkg.com/cors/-/cors-2.8.5.tgz#eac11da51592dd86b9f06f6e7ac293b3df875d29"
+  integrity sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
+  dependencies:
+    object-assign "^4"
+    vary "^1"
 
 corser@^2.0.1:
   version "2.0.1"
@@ -7471,7 +7484,7 @@ nx@13.3.0:
   dependencies:
     "@nrwl/cli" "13.3.0"
 
-object-assign@^4.1.0, object-assign@^4.1.1:
+object-assign@^4, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
@@ -8284,7 +8297,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8424,6 +8437,14 @@ react-error-boundary@^3.1.0:
   integrity sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==
   dependencies:
     "@babel/runtime" "^7.12.5"
+
+react-google-login@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.2.2.tgz#a20b46440c6c1610175ef75baf427118ff0e9859"
+  integrity sha512-JUngfvaSMcOuV0lFff7+SzJ2qviuNMQdqlsDJkUM145xkGPVIfqWXq9Ui+2Dr6jdJWH5KYdynz9+4CzKjI5u6g==
+  dependencies:
+    "@types/react" "*"
+    prop-types "^15.6.0"
 
 react-is@17.0.2, "react-is@^16.12.0 || ^17.0.0", react-is@^17.0.1, react-is@^17.0.2:
   version "17.0.2"
@@ -9966,7 +9987,7 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-vary@~1.1.2:
+vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
