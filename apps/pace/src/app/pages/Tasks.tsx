@@ -34,6 +34,48 @@ const Tasks = () => {
             minutesEstimation: 60,
             priority: 'urgent',
           },
+          {
+            id: '1',
+            name: 'Teoria obliczeń i złożoności obliczeniowej',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
+          {
+            id: '1',
+            name: 'Teoria obliczeń i złożoności obliczeniowej',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
+          {
+            id: '1',
+            name: 'Teoria obliczeń i złożoności obliczeniowej',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
+          {
+            id: '1',
+            name: 'Teoria obliczeń i złożoności obliczeniowej',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
+          {
+            id: '1',
+            name: 'Teoria obliczeń i złożoności obliczeniowej',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
+          {
+            id: '1',
+            name: 'Teoria obliczeń i złożoności obliczeniowej',
+            deadline: new Date('12/12/2021'),
+            minutesEstimation: 60,
+            priority: 'urgent',
+          },
         ]}
       />
       <AddButton />
