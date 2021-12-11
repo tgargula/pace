@@ -1,11 +1,12 @@
 import { BasicDateType, Preference } from '@hackyeah/types';
 import { TimePicker } from '@mui/lab';
-import { TextField, Typography } from '@mui/material';
+import { Grid, TextField, Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   preferenceStateStorage,
   StyledNextButton,
+  StyledTimePicker,
   StylePrevButton,
 } from '../Preferences';
 
@@ -49,30 +50,40 @@ export const SleepingPreference = () => {
       <Typography variant="h4" align="center" marginTop={5} gutterBottom>
         Please, tell us about your sleeping habits
       </Typography>
-      <TimePicker
-        label="When do you usually go to bed?"
-        value={sleepingTime}
-        onChange={(newValue: any) => {
-          setSleepingTime(newValue);
-          storeData();
-        }}
-        renderInput={(params) => <TextField {...params} />}
-      />
-      <TimePicker
-        label="When do you usually wake up?"
-        value={wakingUpTime}
-        onChange={(newValue: any) => {
-          setwakingUpTime(newValue);
-          storeData();
-        }}
-        renderInput={(params) => <TextField {...params} />}
-      />
-      <StylePrevButton variant="contained" onClick={() => onPrev()}>
-        Prev
-      </StylePrevButton>
-      <StyledNextButton variant="contained" onClick={() => onNext()}>
-        Next
-      </StyledNextButton>
+      <Grid container alignItems="center" direction="column">
+        <Grid item xs={12}>
+          <StyledTimePicker
+            label="When do you usually go to bed?"
+            value={sleepingTime}
+            onChange={(newValue: any) => {
+              setSleepingTime(newValue);
+              storeData();
+            }}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <StyledTimePicker
+            label="When do you usually wake up?"
+            value={wakingUpTime}
+            onChange={(newValue: any) => {
+              setwakingUpTime(newValue);
+              storeData();
+            }}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <StylePrevButton variant="contained" onClick={() => onPrev()}>
+            Prev
+          </StylePrevButton>
+        </Grid>
+        <Grid item xs={4}>
+          <StyledNextButton variant="contained" onClick={() => onNext()}>
+            Next
+          </StyledNextButton>
+        </Grid>
+      </Grid>
     </>
   );
 };

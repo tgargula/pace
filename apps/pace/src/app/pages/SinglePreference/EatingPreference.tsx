@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   preferenceStateStorage,
   StyledNextButton,
+  StyledTimePicker,
   StylePrevButton,
 } from '../Preferences';
 
@@ -18,8 +19,8 @@ export const EatingPreference = () => {
     const prefList: any = preferenceStateStorage.data.EatingTimes;
     if (prefList.length > 0) {
       setBreakfastTime(prefList[0].dateStart);
-      setBreakfastTime(prefList[1].dateStart);
-      setBreakfastTime(prefList[2].dateStart);
+      setDinnerTime(prefList[1].dateStart);
+      setSupperTime(prefList[2].dateStart);
     }
   }, []);
 
@@ -67,9 +68,9 @@ export const EatingPreference = () => {
   return (
     <>
       <Typography variant="h4" align="center" marginTop={5} gutterBottom>
-        Please, tell us about your sleeping habits
+        Please, tell us about your eating habits
       </Typography>
-      <TimePicker
+      <StyledTimePicker
         label="When do you usually take breakfast?"
         value={breakfastTime}
         onChange={(newValue: any) => {
@@ -78,7 +79,7 @@ export const EatingPreference = () => {
         }}
         renderInput={(params) => <TextField {...params} />}
       />
-      <TimePicker
+      <StyledTimePicker
         label="When do you usually take dinner?"
         value={dinnerTime}
         onChange={(newValue: any) => {
@@ -87,7 +88,7 @@ export const EatingPreference = () => {
         }}
         renderInput={(params) => <TextField {...params} />}
       />
-      <TimePicker
+      <StyledTimePicker
         label="When do you usually take supper?"
         value={supperTime}
         onChange={(newValue: any) => {

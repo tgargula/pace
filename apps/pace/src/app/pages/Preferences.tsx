@@ -1,5 +1,6 @@
 import { PreferencesState } from '@hackyeah/types';
-import { Box, Button, Typography } from '@mui/material';
+import { TimePicker } from '@mui/lab';
+import { Button, Grid, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -15,19 +16,17 @@ export const DefaultPreferencesState: PreferencesState = {
 export const preferenceStateStorage = DefaultPreferencesState;
 
 export const StyledNextButton = styled(Button)`
-  // TODO CHANGE STYLING of buttons
   height: 100;
-  display: 'flex';
-  justify-content: 'center';
-  align-items: 'left';
-  right: 0;
-  margin-right: 10px;
 `;
 export const StylePrevButton = styled(Button)`
   height: 100;
-  display: 'flex';
-  left: 0;
-  margin-left: 10px;
+`;
+export const SubmitButton = styled(Button)`
+  height: 100;
+`;
+
+export const StyledTimePicker = styled(TimePicker)`
+  display: 'block';
 `;
 
 export const Preferences = () => {
@@ -44,9 +43,14 @@ export const Preferences = () => {
         Please, tell us about your day in the next few minutes
       </Typography>
 
-      <StyledNextButton variant="contained" onClick={() => onNext()}>
-        Next
-      </StyledNextButton>
+      {/* Place grid on center */}
+      <Grid container alignItems="center" direction="column">
+        <Grid item xs={12}>
+          <StyledNextButton variant="contained" onClick={() => onNext()}>
+            Next
+          </StyledNextButton>
+        </Grid>
+      </Grid>
     </>
   );
 };
