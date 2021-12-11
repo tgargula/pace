@@ -24,6 +24,10 @@ const ScheduleIcon = styled(Schedule)`
   }
 `;
 
+const handleClick = () => {
+  // handle click
+};
+
 type Props = {
   name: string;
   deadline: Date;
@@ -35,7 +39,7 @@ const TaskPane = ({ name, deadline }: Props) => {
   const days = differenceInCalendarDays(deadline, new Date());
 
   return (
-    <Task>
+    <Task onClick={handleClick}>
       <h2>{name}</h2>
       <Deadline>
         <ScheduleIcon />
