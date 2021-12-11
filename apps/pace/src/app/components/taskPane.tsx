@@ -2,6 +2,7 @@ import { Priority } from '@hackyeah/types';
 import { Schedule } from '@mui/icons-material';
 import { format, differenceInCalendarDays } from 'date-fns';
 import styled from 'styled-components';
+import { getRelativeDayNote } from '../utils/date.util';
 
 const Task = styled.li`
   width: 100%;
@@ -22,13 +23,6 @@ const ScheduleIcon = styled(Schedule)`
     margin-right: 8px;
   }
 `;
-
-const getRelativeDayNote = (days: number) => {
-  if (days > 1) return `${days} days left`;
-  if (days === 1) return '1 day left';
-  if (days === 0) return 'Due today';
-  return `${-days} days overdue`;
-};
 
 type Props = {
   name: string;
