@@ -12,6 +12,8 @@ const prefix = '/api';
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded());
+
 app.use(`${prefix}/user`, userRouter(prisma));
 app.use(`${prefix}/calendar`, calendarRouter(prisma));
 app.use(`${prefix}/habit`, habitRouter(prisma));
