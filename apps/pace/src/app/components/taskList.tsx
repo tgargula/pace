@@ -14,8 +14,9 @@ type Props = {
 
 const TaskList = ({ tasks }: Props) => (
   <List>
-    {tasks.map(({ name, deadline, minutesEstimation, priority }) => (
+    {tasks.map(({ id, name, deadline, minutesEstimation, priority }) => (
       <TaskPane
+        key={id}
         name={name}
         deadline={deadline}
         minutesEstimation={minutesEstimation}
